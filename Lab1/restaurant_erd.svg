@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1250" viewBox="0 0 1600 1250">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#52647a" />
+    </marker>
+    <style>
+      .body { fill:#fff; stroke:#52647a; stroke-width:2.5; rx:11; }
+      .header { fill:#e7eef7; stroke:#52647a; stroke-width:2.5; rx:11; }
+      .title { font:bold 25px Arial,sans-serif; fill:#18324d; }
+      .field { font:19px Arial,sans-serif; fill:#24364b; }
+      .edge { fill:none; stroke:#52647a; stroke-width:3; marker-end:url(#arrow); }
+      .card { font:bold 17px Arial,sans-serif; fill:#34495e; }
+    </style>
+  </defs>
+  <g class="edge">
+    <path d="M270 320 L270 420" />
+    <path d="M800 320 L800 365 L650 420" />
+    <path d="M1330 320 L1330 420" />
+    <path d="M500 730 L660 870" />
+    <path d="M1100 760 L940 870" />
+  </g>
+  <g class="card">
+    <text x="285" y="375">1 : N</text>
+    <text x="810" y="385">1 : N</text>
+    <text x="1345" y="375">1 : N</text>
+    <text x="525" y="810">1 : N</text>
+    <text x="1010" y="810">1 : N</text>
+  </g>
+  <g>
+    <rect class="header" x="40" y="50" width="460" height="65" />
+    <rect class="body" x="40" y="105" width="460" height="215" />
+    <text class="title" x="65" y="91">dining_table</text>
+    <text class="field" x="65" y="155">PK table_id : bigint</text>
+    <text class="field" x="65" y="195">UQ table_number : integer</text>
+    <text class="field" x="65" y="235">seats : integer</text>
+
+    <rect class="header" x="570" y="50" width="460" height="65" />
+    <rect class="body" x="570" y="105" width="460" height="215" />
+    <text class="title" x="595" y="91">employee</text>
+    <text class="field" x="595" y="155">PK employee_id : bigint</text>
+    <text class="field" x="595" y="195">full_name : text</text>
+    <text class="field" x="595" y="235">position : text</text>
+    <text class="field" x="595" y="275">active : boolean</text>
+
+    <rect class="header" x="1100" y="50" width="460" height="65" />
+    <rect class="body" x="1100" y="105" width="460" height="215" />
+    <text class="title" x="1125" y="91">menu_category</text>
+    <text class="field" x="1125" y="155">PK category_id : bigint</text>
+    <text class="field" x="1125" y="195">UQ category_name : text</text>
+
+    <rect class="header" x="50" y="420" width="650" height="310" />
+    <rect class="body" x="50" y="475" width="650" height="255" />
+    <text class="title" x="75" y="461">restaurant_order</text>
+    <text class="field" x="75" y="525">PK order_id : bigint</text>
+    <text class="field" x="75" y="565">FK table_id : bigint</text>
+    <text class="field" x="75" y="605">FK employee_id : bigint</text>
+    <text class="field" x="75" y="645">status : text</text>
+    <text class="field" x="75" y="685">created_at : timestamptz</text>
+
+    <rect class="header" x="900" y="420" width="650" height="340" />
+    <rect class="body" x="900" y="475" width="650" height="285" />
+    <text class="title" x="925" y="461">dish</text>
+    <text class="field" x="925" y="525">PK dish_id : bigint</text>
+    <text class="field" x="925" y="565">FK category_id : bigint</text>
+    <text class="field" x="925" y="605">name : text</text>
+    <text class="field" x="925" y="645">price : numeric(10,2)</text>
+    <text class="field" x="925" y="685">available : boolean</text>
+    <text class="field" x="925" y="725">UQ (category_id, name)</text>
+
+    <rect class="header" x="450" y="870" width="700" height="300" />
+    <rect class="body" x="450" y="925" width="700" height="245" />
+    <text class="title" x="475" y="911">order_item</text>
+    <text class="field" x="475" y="975">PK, FK order_id : bigint</text>
+    <text class="field" x="475" y="1015">PK, FK dish_id : bigint</text>
+    <text class="field" x="475" y="1055">quantity : integer</text>
+    <text class="field" x="475" y="1095">unit_price : numeric(10,2)</text>
+  </g>
+</svg>
